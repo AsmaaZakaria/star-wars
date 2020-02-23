@@ -22,6 +22,11 @@ const StyledLink = styled(Link)`
   font-size: 18px;
 `;
 
+const Div = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
+
 const mapStateToProps = (state, ownProps) => {
   if (ownProps.match.params.id) {
     return {
@@ -55,21 +60,31 @@ const CharacterView = props => {
     <Container style={{ padding: "20px" }}>
       <Header>{character.name}</Header>
       <CharacterBasicInfo character={character} />
-      {props.homeworld && (
-        <CharacterInfo header="Home World" data={props.homeworld} attr="name" />
-      )}
-      {props.films && (
-        <CharacterInfo header="Films" data={props.films} attr="title" />
-      )}
-      {props.species.length ? (
-        <CharacterInfo header="Species" data={props.species} attr="name" />
-      ) : null}
-      {props.vehicles.length ? (
-        <CharacterInfo header="Vehicles" data={props.vehicles} attr="name" />
-      ) : null}
-      {props.starships.length ? (
-        <CharacterInfo header="Starships" data={props.starships} attr="name" />
-      ) : null}
+      <Div>
+        {props.homeworld && (
+          <CharacterInfo
+            header="Home World"
+            data={props.homeworld}
+            attr="name"
+          />
+        )}
+        {props.films && (
+          <CharacterInfo header="Films" data={props.films} attr="title" />
+        )}
+        {props.species.length ? (
+          <CharacterInfo header="Species" data={props.species} attr="name" />
+        ) : null}
+        {props.vehicles.length ? (
+          <CharacterInfo header="Vehicles" data={props.vehicles} attr="name" />
+        ) : null}
+        {props.starships.length ? (
+          <CharacterInfo
+            header="Starships"
+            data={props.starships}
+            attr="name"
+          />
+        ) : null}
+      </Div>
       <StyledLink to="/people">Back To List</StyledLink>
     </Container>
   );

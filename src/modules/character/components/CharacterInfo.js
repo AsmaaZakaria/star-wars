@@ -17,7 +17,7 @@ const CharacterInfo = ({ header, data, attr }) => {
   return (
     <Div>
       <h3>{header}</h3>
-      <ListGroup horizontal>
+      <ListGroup>
         {data.length ? (
           data.map(d => <ListItem key={d[attr]}>{d[attr]}</ListItem>)
         ) : (
