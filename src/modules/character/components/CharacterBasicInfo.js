@@ -12,15 +12,6 @@ const Span = styled.span`
   color: #ffb701;
 `;
 
-// const Circle = styled(Span)`
-//   border-radius: 50%;
-//   color: ${props => (props.color ? props.color : "n/a")};
-//   background-color: ${props => (props.color ? props.color : "n/a")};
-//   height: 30px;
-//   width: 30px;
-//   display: inline-block;
-// `;
-
 const Div = styled.div`
   padding: 20px;
   border: 1px solid #ffb701;
@@ -65,21 +56,18 @@ const CharacterBasicInfo = ({ character }) => {
             <p>
               <Span>Hair Color: </Span>
               {character.hair_color}
-              {/* <Circle color={character.hair_color} /> */}
             </p>
           </Col>
           <Col>
             <p>
               <Span>Skin Color: </Span>
               {character.skin_color}
-              {/* <Circle color={character.skin_color} /> */}
             </p>
           </Col>
           <Col>
             <p>
               <Span>Eye Color: </Span>
               {character.eye_color}
-              {/* <Circle color={character.eye_color} /> */}
             </p>
           </Col>
         </StyledRow>
