@@ -1,6 +1,12 @@
 import { combineReducers } from "redux";
-import CharacterReducer from "../modules/character/reducers";
+import { characterReducer } from "../modules/character/reducers";
 
-export default combineReducers({
-  characters: CharacterReducer
+const appReducer = combineReducers({
+  characters: characterReducer
 });
+
+const rootReducer = (state, action) => {
+  return appReducer(state, action);
+};
+
+export default rootReducer;

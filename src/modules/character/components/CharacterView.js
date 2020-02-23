@@ -26,7 +26,7 @@ const mapStateToProps = (state, ownProps) => {
   if (ownProps.match.params.id) {
     return {
       character: state.characters.character,
-      films: state.characters.characterFilm,
+      films: state.characters.characterFilms,
       species: state.characters.characterSpecies,
       vehicles: state.characters.characterVehicles,
       starships: state.characters.characterStarships,
