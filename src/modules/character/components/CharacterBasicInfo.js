@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import PropTypes from "prop-types";
 import { Row, Col } from "react-bootstrap";
 import styled from "styled-components";
 
@@ -85,6 +86,10 @@ const CharacterBasicInfo = ({ character }) => {
       </Div>
     </Fragment>
   );
+};
+
+CharacterBasicInfo.propTypes = {
+  character: PropTypes.object.isRequired
 };
 
 export default CharacterBasicInfo;

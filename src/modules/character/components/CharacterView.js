@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
@@ -72,6 +73,17 @@ const CharacterView = props => {
       <StyledLink to="/people">Back To List</StyledLink>
     </Container>
   );
+};
+
+CharacterView.propTypes = {
+  match: PropTypes.object.isRequired,
+  fetchCharacter: PropTypes.func.isRequired,
+  character: PropTypes.object,
+  homeworld: PropTypes.object,
+  films: PropTypes.arrayOf(PropTypes.object).isRequired,
+  species: PropTypes.arrayOf(PropTypes.object).isRequired,
+  vehicles: PropTypes.arrayOf(PropTypes.object).isRequired,
+  starships: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CharacterView);

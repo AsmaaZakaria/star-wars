@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Card } from "react-bootstrap";
 import styled from "styled-components";
 
@@ -33,6 +34,10 @@ const CharacterCard = ({ character }) => {
       </Card.Body>
     </StyledCard>
   );
+};
+
+CharacterCard.propTypes = {
+  character: PropTypes.object.isRequired
 };
 
 export default CharacterCard;

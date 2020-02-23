@@ -1,5 +1,4 @@
 import React from "react";
-// import PropTypes from "prop-types";
 import { Container } from "react-bootstrap";
 import { Switch, Route } from "react-router-dom";
 // import NotFound from "./NotFound";

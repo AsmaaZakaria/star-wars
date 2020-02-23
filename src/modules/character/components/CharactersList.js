@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
 import Loader from "../../../components/Loader";
@@ -36,6 +37,11 @@ const CharactersList = props => {
       <Row>{renderCharactersList()}</Row>
     </Container>
   );
+};
+
+CharactersList.propTypes = {
+  fetchCharacters: PropTypes.func.isRequired,
+  characters: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CharactersList);

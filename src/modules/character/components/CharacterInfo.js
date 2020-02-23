@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { ListGroup } from "react-bootstrap";
 import styled from "styled-components";
 
@@ -25,6 +26,15 @@ const CharacterInfo = ({ header, data, attr }) => {
       </ListGroup>
     </Div>
   );
+};
+
+CharacterInfo.propTypes = {
+  header: PropTypes.string.isRequired,
+  data: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.arrayOf(PropTypes.object)
+  ]).isRequired,
+  attr: PropTypes.string.isRequired
 };
 
 export default CharacterInfo;
